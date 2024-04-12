@@ -42,7 +42,7 @@ func (c *ContainerProvider) GetInjectedRouter() *routes.Router {
 	}
 
 	// 自動注入所有控制器
-	router := &routes.Router{}
+	var router *routes.Router
 	invokeErr := container.Invoke(func(readyRouter *routes.Router) {
 		router = readyRouter
 	})
